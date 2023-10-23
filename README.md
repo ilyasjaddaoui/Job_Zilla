@@ -1,5 +1,11 @@
 ﻿# JobZilla - Plateforme de recherche d'emploi 🚀
 
+ Demo video : 
+
+https://github.com/ilyasjaddaoui/Job_Zilla/assets/100704676/87c7d777-530f-4626-a09c-4856396ceceb
+
+
+
 Bienvenue sur le référentiel de Jobzilla, une plateforme de recherche d'emploi en cours de développement ! 
 
 Actuellement, nous avons terminé la partie backend de l'application, mais nous travaillons toujours activement sur le frontend pour créer une expérience utilisateur exceptionnelle. 

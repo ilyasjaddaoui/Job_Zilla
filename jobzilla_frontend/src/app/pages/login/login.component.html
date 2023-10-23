@@ -1,0 +1,106 @@
+<div class="page-wraper">
+    <div class="page-content">
+        <!-- Signup Section Start -->
+        <div class="section-full site-bg-white">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- LEFT SIDE -->
+                    <div class="col-xl-8 col-lg-6 col-md-5 twm-log-reg-media-wrap">
+                        <app-left-side>
+
+                        </app-left-side>
+                    </div>
+
+                    <!-- RIGHT SIDE-->
+                    <div class="col-xl-4 col-lg-6 col-md-7">
+                        <div class="twm-log-reg-form-wrap">
+                            <div class="twm-log-reg-logo-head">
+                                <a>
+                                    <img src="assets/logo-dark.png" alt="" class="logo">
+                                </a>
+                            </div>
+
+                            <div class="twm-log-reg-inner">
+                                <div class="twm-log-reg-head">
+                                    <div class="twm-log-reg-logo">
+                                        <span class="log-reg-form-title">LOGIN</span>
+                                    </div>
+                                </div>
+
+                                <form (ngSubmit)="formSubmit()">
+
+                                    <div class="modal-body">
+                                        <div class="twm-tabs-style-2">
+                                            <div class="tab-content" id="myTabContent">
+                                                <!--Signup Content-->
+                                                <div class="tab-pane fade show active" id="sign-candidate">
+                                                    <div class="row">
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <input [(ngModel)]="loginData.usernameOrEmail"
+                                                                    name="usernameOrEmail" type="text" required=""
+                                                                    class="form-control" placeholder="Username *">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <input [(ngModel)]="loginData.password" name="password"
+                                                                    type="password" class="form-control" required=""
+                                                                    placeholder="Password *">
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <div class=" form-check">
+                                                                    <input type="checkbox" class="form-check-input"
+                                                                        id="agree1">
+                                                                    <label class="form-check-label" for="agree1">I agree
+                                                                        to the <a href="javascript:;">Terms and
+                                                                            conditions</a></label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <button type="submit" class="site-button">Login</button>
+                                                        </div>
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <div class=" form-check">
+                                                                    <p class="mt-2">Dont have an account ?
+                                                                        <button routerLink="/signup"
+                                                                            class="twm-backto-login"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-dismiss="modal">Sign up
+                                                                            here</button>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

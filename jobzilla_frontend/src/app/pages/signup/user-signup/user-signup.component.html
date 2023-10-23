@@ -1,0 +1,68 @@
+<form (ngSubmit)="formSubmit()">
+
+    <div class="modal-body">
+        <div class="twm-tabs-style-2">
+            <div class="tab-content" id="myTabContent">
+                <!--Signup Content-->
+                <div class="tab-pane fade show active" id="sign-candidate">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <input [(ngModel)]="newUser.username" name="username" type="text" required="" class="form-control"
+                                    placeholder="Username *">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <input [(ngModel)]="newUser.email" name="email" type="text" class="form-control" required=""
+                                    placeholder="Email *">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <input [(ngModel)]="newUser.password" name="password" type="password" class="form-control" required="" placeholder="Password *">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <input [(ngModel)]="newUser.phone" name="phone" type="text" class="form-control" required="" placeholder="Phone *">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <div class=" form-check">
+                                    <input type="checkbox" class="form-check-input" id="agree1">
+                                    <label class="form-check-label" for="agree1">I agree to the <a
+                                            href="javascript:;">Terms and conditions</a></label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="site-button">Sign Up</button>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group mb-3">
+                                <div class=" form-check">
+                                    <p class="mt-2">Already registered ?
+                                        <button routerLink="/login" class="twm-backto-login" data-bs-toggle="modal" data-bs-dismiss="modal">Log in here</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -5,7 +5,6 @@ import com.example.jobzilla_backend.dtos.JobResponse;
 import com.example.jobzilla_backend.services.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,11 +25,6 @@ public class JobController {
         return new ResponseEntity<>(jobService.saveJob(jobDto, userId), HttpStatus.CREATED);
     }
 
-//    @GetMapping("/jobs")
-//    public ResponseEntity<List<JobDto>> getAllJobs(){
-//
-//        return new ResponseEntity<>(jobService.getAllJobs(), HttpStatus.OK);
-//    }
     @GetMapping("/jobs")
     public JobResponse getAllJobs(@RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
                               @RequestParam(value = "pageSize", defaultValue = "6", required = false) int pageSize,

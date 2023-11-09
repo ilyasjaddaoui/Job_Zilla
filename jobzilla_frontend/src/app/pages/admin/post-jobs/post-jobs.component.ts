@@ -12,24 +12,28 @@ import { JobService } from 'src/app/services/job/job.service';
 })
 export class PostJobsComponent implements OnInit {
   job: Job = new Job();
-  id!: number;
+  userId!: number;
   user!:User;
+  isLoggedIn = false;
 
-  constructor(private jobService:JobService, private authService:AuthService, private route:ActivatedRoute) { }
+
+  constructor(private jobService:JobService, private auth:AuthService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+
+    this.isLoggedIn = this.auth.isLoggedIn();
+    this.user = this.auth.getUser();
+    this.userId = this.user.userId; 
   }
 
   createJobs(){
-    this.authService.getUser().subscribe(
-      (userData: User) => {
-        this.user = userData;
-        this.id = this.user.id;
-        console.log(this.id);
+    this.jobService.postJobs(this.job, this.userId).subscribe(
+      (data: any) => {
+        console.log(data);
+        console.log("Success");
       },
       (error: any) => {
-        console.error('Error fetching user data:', error);
+        console.log("Error:", error);
       }
     );
 

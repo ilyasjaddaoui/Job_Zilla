@@ -5,29 +5,27 @@
         <div class="breadcrumbs"><a routerLink="/admin">Dasboard</a><span>My Job Listing</span></div>
     </div>
 
-    <!--Basic Information-->
     <div class="panel panel-default">
         <div class="panel-heading wt-panel-heading p-a20">
             <h4 class="panel-tittle m-a0"><i class="fa fa-suitcase"></i> Job Details</h4>
         </div>
-        <div class="panel-body wt-panel-body p-a20 m-b30 ">
-            <div class="twm-D_table p-a20 table-responsive">
-                <table id="jobs_bookmark_table" class="table table-bordered twm-bookmark-list-wrap">
+        <div class="panel-body wt-panel-body p-a20 m-b30 " >
+            <div class="twm-D_table p-a20 table-responsive" >
+                <table id="jobs_bookmark_table" class="table table-bordered twm-bookmark-list-wrap"  >
                     <thead>
                         <tr>
                             <th>Job Title</th>
                             <th>Category</th>
                             <th>Job Types</th>
-                            <th>Applications</th>
+                            <th>Offered Salary</th>
                             <th>Created & Expired</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!--1-->
-                        <tr>
+                    <tbody >
+                        <tr *ngFor="let job of jobs">
                             <td>
-                                <div class="twm-bookmark-list">
+                                <div class="twm-bookmark-list" >
                                     <div class="twm-media">
                                         <div class="twm-media-pic">
                                            <img src="assets/jobs-company/pic1.jpg" alt="#">
@@ -35,9 +33,9 @@
                                     </div>
                                     <div class="twm-mid-content">
                                         <a href="#" class="twm-job-title">
-                                            <h4>Senior Web Designer</h4>
+                                            <h4>{{job.jobTitle}}</h4>
                                             <p class="twm-bookmark-address">
-                                                <i class="feather-map-pin"></i>1363-1385 Sunset Blvd Los Angeles, CA 90026, USA
+                                                <i class="feather-map-pin"></i>{{job.city}}
                                             </p>
                                         </a>
                                         
@@ -45,12 +43,12 @@
                                     
                                 </div>
                             </td>
-                            <td>Web Designer</td>
-                            <td><div class="twm-jobs-category"><span class="twm-bg-green">Part Time</span></div></td>
-                            <td><a href="javascript:;" class="site-text-primary">03 Applied</a></td>
+                            <td>{{job.jobCategory}}</td>
+                            <td><div class="twm-jobs-category"><span class="twm-bg-green">{{job.jobType}}</span></div></td>
+                            <td><a href="javascript:;" class="site-text-primary">{{job.offeredSalary}}</a></td>
                             <td>
-                                <div>08/06/2023</div>
-                                <div>28/06/2023</div>
+                                <div>{{job.startDate | date: 'shortDate'}}</div>
+                                <div>{{job.endDate | date: 'shortDate'}}</div>
                             </td>
                             
                             <td>
@@ -82,7 +80,7 @@
                             <th>Job Title</th>
                             <th>Category</th>
                             <th>Job Types</th>
-                            <th>Applications</th>
+                            <th>Offered Salary</th>
                             <th>Created & Expired</th>
                             <th>Action</th>
                         </tr>

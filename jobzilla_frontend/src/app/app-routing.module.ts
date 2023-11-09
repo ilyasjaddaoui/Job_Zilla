@@ -43,8 +43,8 @@ const routes: Routes = [
   */
   {path:"admin", component:AdminPageComponent, canActivate:[RecruiterGuard], children:[
     {path:"", component:DashboardComponent, canActivate:[RecruiterGuard] },
-    {path:"post_jobs", component:PostJobsComponent, canActivate:[RecruiterGuard]},
-    {path:"manage_jobs", component:ManageJobsComponent, canActivate:[RecruiterGuard]}
+    {path:":userId/post_jobs", component:PostJobsComponent, canActivate:[RecruiterGuard]},
+    {path:":userId/manage_jobs", component:ManageJobsComponent, canActivate:[RecruiterGuard]}
     
   ]},
   

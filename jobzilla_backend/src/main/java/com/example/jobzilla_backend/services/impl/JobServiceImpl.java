@@ -84,44 +84,11 @@ public class JobServiceImpl implements JobService {
     }
 
 
-//    public JobResponse getAllPosts(int pageNo, int pageSize, String keyword) {
-//        // create pageable instance
-//        Pageable pageable= PageRequest.of(pageNo,pageSize);
-//
-//       Page<Job> jobs = jobRepository.findAll(pageable);
-//
-//        //get content for page object
-//        List<Job> jobList = jobs.getContent();
-//
-//        // Use the custom repository method for searching by keyword
-//        Page<Job> jobSearch = jobRepository.findByJobTitleContaining(keyword, pageable);
-//
-//        // Get content for the page object
-//
-//       List<JobDto> content = jobList.stream().map(job -> mapToDto(job)).collect(Collectors.toList());
-//
-//        JobResponse jobResponse = new JobResponse();
-//        jobResponse.setContent(content);
-//        jobResponse.setPageNo(jobs.getNumber());
-//        jobResponse.setPageSize(jobs.getSize());
-//        jobResponse.setTotalElements(jobs.getTotalElements());
-//        jobResponse.setTotalPages(jobs.getTotalPages());
-//        jobResponse.setLast(jobs.isLast());
-//        return jobResponse;
-//    }
-
-
     @Override
     public JobDto getJobById(Long jobId) {
         // find job by id
         Job job = jobRepository.findById(jobId).orElseThrow(()-> new JobApiException(HttpStatus.BAD_REQUEST, "Job not found"));
 
-        // find user by id
-//        User user = userRepository.findById(userId).orElseThrow(()-> new UsernameNotFoundException("User not found: " + userId));
-//
-//        if(!job.getUser().getId().equals(user.getId())){
-//            throw new JobApiException(HttpStatus.BAD_REQUEST, "No job found");
-//        }
         return mapToDto(job);
     }
 

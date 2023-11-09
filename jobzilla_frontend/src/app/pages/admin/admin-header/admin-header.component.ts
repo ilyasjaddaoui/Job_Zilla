@@ -12,12 +12,15 @@ export class AdminHeaderComponent implements OnInit {
 
   isLoggedIn = false;
   user!: User;
+  userId: any;
+  
 
   constructor(private auth:AuthService, private router:Router) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.auth.isLoggedIn();
     this.user = this.auth.getUser();
+    this.userId = this.user.userId;
     this.auth.loginStatusSubject.asObservable().subscribe(
       (data)=>{
         this.isLoggedIn = this.auth.isLoggedIn();
@@ -30,5 +33,7 @@ export class AdminHeaderComponent implements OnInit {
     this.auth.logout();
     this.router.navigate(['/login']);
   }
+
+  
 
 }

@@ -30,8 +30,12 @@ getAllJobs(pageNo: number, pageSize: number, keyword?: string): Observable<JobRe
     return this.http.get<Job>(`${environment.apiUrl+"/api/jobs"}/${id}`);
   }
 
-  public postJobs(job:Job, id:number){
-    return this.http.post(`${environment.apiUrl}/api/users/${id}/add_job`, job);
+  public postJobs(job:Job, userId:number){
+    return this.http.post(`${environment.apiUrl}/api/users/${userId}/add_job`, job);
+  }
+
+  public getJobsByUserId(userId:number):Observable<Job[]>{
+    return this.http.get<Job[]>(`${environment.apiUrl}/api/users/${userId}/jobs`);
   }
 
  

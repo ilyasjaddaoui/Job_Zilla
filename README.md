@@ -2,7 +2,9 @@
 
  Demo video : 
 
-https://github.com/ilyasjaddaoui/Job_Zilla/assets/100704676/87c7d777-530f-4626-a09c-4856396ceceb
+https://github.com/ilyasjaddaoui/Job_Zilla/assets/100704676/c91b0205-dc5b-46b4-b074-bd6a6c511a3e
+
+
 
 
 

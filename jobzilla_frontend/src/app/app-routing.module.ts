@@ -22,7 +22,7 @@ const routes: Routes = [
           ** USER PAGES **
   */
   {path: "", component:HomeComponent, canActivate:[UserGuard]},
-  {path:'jobs/:id', component:JobDetailsComponent, canActivate:[UserGuard]},
+  {path:'jobs/:id', component:JobDetailsComponent, canActivate:[UserGuard && RecruiterGuard]},
   
 
   /*

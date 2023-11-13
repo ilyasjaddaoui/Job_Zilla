@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   formSubmit(){
     this.auth.login(this.loginData).subscribe(
       (data: any) => {
-        console.log(data);
+        // console.log(data);
         console.log("success");
         
         // set token to localstorage
@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         });
       },
       (error: any) => {
+        alert("username ou password est incorrect")
         console.log(error);
       }
     )

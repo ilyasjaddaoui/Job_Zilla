@@ -28,11 +28,11 @@
                                 <div class="twm-bookmark-list" >
                                     <div class="twm-media">
                                         <div class="twm-media-pic">
-                                           <img src="assets/jobs-company/pic1.jpg" alt="#">
+                                           <img style="cursor: pointer;" (click)="navigateToJobDetails(job.id)" src="assets/jobs-company/pic1.jpg" alt="#">
                                         </div>
                                     </div>
                                     <div class="twm-mid-content">
-                                        <a href="#" class="twm-job-title">
+                                        <a style="cursor: pointer;" (click)="navigateToJobDetails(job.id)" class="twm-job-title">
                                             <h4>{{job.jobTitle}}</h4>
                                             <p class="twm-bookmark-address">
                                                 <i class="feather-map-pin"></i>{{job.city}}
@@ -55,7 +55,7 @@
                                 <div class="twm-table-controls">
                                     <ul class="twm-DT-controls-icon list-unstyled">
                                         <li>
-                                            <button title="View profile" data-bs-toggle="tooltip" data-bs-placement="top">
+                                            <button (click)="navigateToJobDetails(job.id)" title="View profile" data-bs-toggle="tooltip" data-bs-placement="top">
                                                 <span class="fa fa-eye"></span>
                                             </button>
                                         </li>
@@ -65,7 +65,7 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <button title="Delete" data-bs-toggle="tooltip" data-bs-placement="top">
+                                            <button (click)="deleteJob(job.id)" title="Delete" data-bs-toggle="tooltip" data-bs-placement="top">
                                                 <span class="far fa-trash-alt"></span>
                                             </button>
                                         </li>

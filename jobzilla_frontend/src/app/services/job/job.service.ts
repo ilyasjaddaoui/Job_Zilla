@@ -38,5 +38,8 @@ getAllJobs(pageNo: number, pageSize: number, keyword?: string): Observable<JobRe
     return this.http.get<Job[]>(`${environment.apiUrl}/api/users/${userId}/jobs`);
   }
 
+  public deleteJob(id:number):Observable<Object>{
+    return this.http.delete(`${environment.apiUrl+"/api/jobs"}/${id}`, {responseType: 'text'})
+  }
  
 }

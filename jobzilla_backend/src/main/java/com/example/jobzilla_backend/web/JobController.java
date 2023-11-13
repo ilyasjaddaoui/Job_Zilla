@@ -49,7 +49,7 @@ public class JobController {
         return new ResponseEntity<>(jobService.updateJob(jobDto, id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/users/{userId}/jobs/{id}")
+    @DeleteMapping("/jobs/{id}")
     public ResponseEntity<String> deleteJob(@PathVariable(name = "id") Long id){
         jobService.deleteJob(id);
         return new ResponseEntity<>("job deleted successfully", HttpStatus.OK);
